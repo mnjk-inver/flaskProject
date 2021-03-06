@@ -1,6 +1,12 @@
 <!doctype html>
 <html>
 <body>
+    {% if session['login'] %}
+        <p>You are currently logged in as {{ session['login']['username'] }}@{{session['login']['ip_address'] }} <br>
+        <a href="http://172.17.50.29:5000/logout" target="_blank" rel="noopener noreferrer">logout</a></p>
+    {% else %}
+        <p><a href="http://172.17.50.29:5000/login" target="_blank" rel="noopener noreferrer">login</a></p>
+    {% endif %}
     <p><a href="http://172.17.50.29:5000/lab01" target="_blank" rel="noopener noreferrer">lab01</a></p>
     <p><a href="http://172.17.50.29:5000/lab02" target="_blank" rel="noopener noreferrer">lab02</a></p>
     <p><a href="http://172.17.50.29:5000/lab03" target="_blank" rel="noopener noreferrer">lab03</a></p>
