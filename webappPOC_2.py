@@ -1,18 +1,18 @@
 import flask
 import subprocess
 from forms import LoginForm
-from flask_session import Session
-from flask import render_template, session, request
+#from flask_session import Session
+#from flask import render_template, session, request
 from netmiko import ConnectHandler
 
 app = flask.Flask(__name__)
 app.secret_key = 'super secret key'
-app.config['SESSION_TYPE'] = 'filesystem'
-Session(app)
+#app.config['SESSION_TYPE'] = 'filesystem'
+#Session(app)
 
 @app.route('/')
 def samplefunction():
-    s = flask.session.get('data')
+    s = flask.session.get('login')
     print(s)
     return flask.render_template('index.html')
 
@@ -22,13 +22,13 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         data = {'username': form.username.data, 'password': form.password.data, 'ip_address': form.ip_address.data}
-        flask.session['data'] = data
+        flask.session['login'] = data
         return flask.redirect('/')
     return flask.render_template('login.html', title='Sign In', form=form)
 
 @app.route('/lab01')
 def lab01():
-    s = flask.session.get('data')
+    s = flask.session.get('login')
 #    def inner():
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
