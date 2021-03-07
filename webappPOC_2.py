@@ -67,137 +67,183 @@ def lab02():
 
 @app.route('/lab03')
 def lab03():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_03_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab04')
 def lab04():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_04_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab05')
 def lab05():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_05_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab06')
 def lab06():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_06_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab07')
 def lab07():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_07_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab08')
 def lab08():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_08_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab09')
 def lab09():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_09_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab10')
 def lab10():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_10_rewrite.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab11')
 def lab11():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_11_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 @app.route('/lab12')
 def lab12():
-    def inner():
-        proc = subprocess.Popen(
-            ['python3 lab_01_revised.py'],  # call something with a lot of output so we can see it
-            shell=True,
-            stdout=subprocess.PIPE,
-            universal_newlines=True
-        )
-        for line in iter(proc.stdout.readline, ''):
-            yield line + "<br/>\n"
+    s = flask.session.get('login')
+    #    def inner():
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
-        # for line in iter(proc.stdout.readline, ''):
-        #      yield line
-
-    return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show th$
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_12_test.py | python3")
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
 
 
 #     return render_template('lab01.html',output=lab_01_revised)
