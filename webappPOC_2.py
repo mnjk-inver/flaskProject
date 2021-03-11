@@ -4,8 +4,7 @@ from forms import LoginForm
 from netmiko import ConnectHandler
 
 app = flask.Flask(__name__)
-app.secret_key = 'super secret key'
-
+app.secret_key = '\x8f\xc7<$<\xbc\x9b\x0b\xc1\xa5o\x15+t\x98w'
 
 @app.route('/')
 def samplefunction():
@@ -262,6 +261,6 @@ def lab12():
             </html>
         '''
 
-#     return render_template('lab01.html',output=lab_01_revised)
-
-# app.run(debug=True, port=5000, host='0.0.0.0')
+@app.errorhandler(netmiko.ssh_exception.NetmikoAuthenticationException)
+def login_error():
+    return 'Incorrect Password. Logout and try again.'
