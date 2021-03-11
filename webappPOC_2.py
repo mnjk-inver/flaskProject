@@ -24,15 +24,17 @@ def login():
         return flask.redirect('/')
     return flask.render_template('login.html', title='Sign In', form=form)
 
+
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     flask.session.pop('login')
     return flask.redirect('/login')
 
+
 @app.route('/lab01')
 def lab01():
     s = flask.session.get('login')
-#    def inner():
+    #    def inner():
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
@@ -46,6 +48,7 @@ def lab01():
             </body>
         </html>
     '''
+
 
 @app.route('/lab02')
 def lab02():
@@ -65,6 +68,7 @@ def lab02():
             </html>
         '''
 
+
 @app.route('/lab03')
 def lab03():
     s = flask.session.get('login')
@@ -82,6 +86,7 @@ def lab03():
                 </body>
             </html>
         '''
+
 
 @app.route('/lab04')
 def lab04():
@@ -101,6 +106,7 @@ def lab04():
             </html>
         '''
 
+
 @app.route('/lab05')
 def lab05():
     s = flask.session.get('login')
@@ -118,6 +124,7 @@ def lab05():
                 </body>
             </html>
         '''
+
 
 @app.route('/lab06')
 def lab06():
@@ -137,6 +144,7 @@ def lab06():
             </html>
         '''
 
+
 @app.route('/lab07')
 def lab07():
     s = flask.session.get('login')
@@ -154,6 +162,7 @@ def lab07():
                 </body>
             </html>
         '''
+
 
 @app.route('/lab08')
 def lab08():
@@ -173,6 +182,7 @@ def lab08():
             </html>
         '''
 
+
 @app.route('/lab09')
 def lab09():
     s = flask.session.get('login')
@@ -191,16 +201,21 @@ def lab09():
             </html>
         '''
 
+
 @app.route('/lab10')
 def lab10():
     s = flask.session.get('login')
     #    def inner():
-    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password'],
+           'secret': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    net_connect.enable()
     output = net_connect.send_command(
-        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_10_rewrite.py | python3")
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_10_rewrite.py | sudo python3")
+    net_connect.exit_enable_mode()
+
     return f'''
             <html>
                 <body>
@@ -208,6 +223,7 @@ def lab10():
                 </body>
             </html>
         '''
+
 
 @app.route('/lab11')
 def lab11():
@@ -227,6 +243,7 @@ def lab11():
             </html>
         '''
 
+
 @app.route('/lab12')
 def lab12():
     s = flask.session.get('login')
@@ -244,7 +261,6 @@ def lab12():
                 </body>
             </html>
         '''
-
 
 #     return render_template('lab01.html',output=lab_01_revised)
 
