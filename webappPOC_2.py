@@ -3,43 +3,56 @@ import subprocess
 from forms import LoginForm
 from netmiko import ConnectHandler
 
+#set flask application to variable app
 app = flask.Flask(__name__)
+#secret key used to encrypt cookie for session
 app.secret_key = '\x8f\xc7<$<\xbc\x9b\x0b\xc1\xa5o\x15+t\x98w'
 
+#link to index page
 @app.route('/')
 def samplefunction():
+#check for existence of session
     s = flask.session.get('login')
+#if no session go to login screen
     if s == None:
         return flask.redirect('/login')
+#if session, present index.html
     return flask.render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+#call form for inputting login info
     form = LoginForm()
     if form.validate_on_submit():
         data = {'username': form.username.data, 'password': form.password.data, 'ip_address': form.ip_address.data}
+        #store login info in a session cookie
         flask.session['login'] = data
+        #return to index page
         return flask.redirect('/')
     return flask.render_template('login.html', title='Sign In', form=form)
 
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
+    #delete session info
     flask.session.pop('login')
     return flask.redirect('/login')
 
 
 @app.route('/lab01')
 def lab01():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    #run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_01_revised.py | python3")
+    #display command output
     return f'''
         <html>
             <body>
@@ -51,14 +64,17 @@ def lab01():
 
 @app.route('/lab02')
 def lab02():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_02_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -70,14 +86,17 @@ def lab02():
 
 @app.route('/lab03')
 def lab03():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_03_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -89,14 +108,17 @@ def lab03():
 
 @app.route('/lab04')
 def lab04():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_04_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -108,14 +130,17 @@ def lab04():
 
 @app.route('/lab05')
 def lab05():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_05_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -127,14 +152,17 @@ def lab05():
 
 @app.route('/lab06')
 def lab06():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_06_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -146,14 +174,17 @@ def lab06():
 
 @app.route('/lab07')
 def lab07():
+    #check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_07_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -165,14 +196,17 @@ def lab07():
 
 @app.route('/lab08')
 def lab08():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_08_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -184,14 +218,17 @@ def lab08():
 
 @app.route('/lab09')
 def lab09():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_09_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -203,17 +240,21 @@ def lab09():
 
 @app.route('/lab10')
 def lab10():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password'],
            'secret': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    #enable sudo on remote host
     net_connect.enable()
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_10_rewrite.py | sudo python3")
     net_connect.exit_enable_mode()
+    # display command output
 
     return f'''
             <html>
@@ -226,14 +267,17 @@ def lab10():
 
 @app.route('/lab11')
 def lab11():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_11_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -245,14 +289,17 @@ def lab11():
 
 @app.route('/lab12')
 def lab12():
+    # check for existence of session
     s = flask.session.get('login')
-    #    def inner():
+    #    set login info from session as dictionary
     VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password']}
 
     # initiate connection
     net_connect = ConnectHandler(**VMR)
+    # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_12_test.py | python3")
+    # display command output
     return f'''
             <html>
                 <body>
@@ -261,6 +308,7 @@ def lab12():
             </html>
         '''
 
+#check for netmiko authentication error
 @app.errorhandler(netmiko.ssh_exception.NetmikoAuthenticationException)
 def login_error():
     return 'Incorrect Password. Logout and try again.'
