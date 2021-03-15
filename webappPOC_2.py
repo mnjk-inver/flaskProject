@@ -2,6 +2,7 @@ import flask
 import subprocess
 from forms import LoginForm
 from netmiko import ConnectHandler
+import netmiko
 
 #set flask application to variable app
 app = flask.Flask(__name__)
@@ -310,5 +311,5 @@ def lab12():
 
 #check for netmiko authentication error
 @app.errorhandler(netmiko.ssh_exception.NetmikoAuthenticationException)
-def login_error():
+def login_error(test):
     return 'Incorrect Password. Logout and try again.'
