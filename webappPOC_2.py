@@ -29,11 +29,15 @@ def login():
         data = {'username': form.username.data, 'password': form.password.data, 'ip_address': form.ip_address.data}
         #store login info in a session cookie
         flask.session['login'] = data
-        #return to index page
+        #check if ip address is on 172.17.50.xx subnet
         if "172.17.50." not in data['ip_address']:
+            #if not delete session
             flask.session.pop('login')
+            #display error message
             flask.flash( "You may only use this software to log into a 172.17.50.xx address")
+            #return to login screen
             return flask.redirect('/login')
+        # return to index page
         return flask.redirect('/')
     return flask.render_template('login.html', title='Sign In', form=form)
 
