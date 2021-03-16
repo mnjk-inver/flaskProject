@@ -2,7 +2,7 @@ import flask
 import subprocess
 from forms import LoginForm
 from netmiko import ConnectHandler
-import netmiko
+import netmiko, time
 
 #set flask application to variable app
 app = flask.Flask(__name__)
@@ -17,10 +17,10 @@ def samplefunction():
 #if no session go to login screen
     if s == None:
         return flask.redirect('/login')
-#if session, present index.html
+    #if session, present index.html
     return flask.render_template('index.html')
 
-
+1
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 #call form for inputting login info
@@ -30,6 +30,10 @@ def login():
         #store login info in a session cookie
         flask.session['login'] = data
         #return to index page
+        if "172.17.50." not in data['ip_address']:
+            flask.session.pop('login')
+            flask.flash( "You may only use this software to log into a 172.17.50.xx address")
+            return flask.redirect('/login')
         return flask.redirect('/')
     return flask.render_template('login.html', title='Sign In', form=form)
 
