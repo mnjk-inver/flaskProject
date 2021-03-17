@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <body>
-#check if login session cookie exists
+{#check if login session cookie exists#}
     {% if session['login'] %}
-#if so print login info
+{#if so print login info#}
         <p>You are currently logged in as {{ session['login']['username'] }}@{{session['login']['ip_address'] }} <br>
         <a href="/logout" target="_blank" rel="noopener noreferrer">logout</a></p>
-#if not, redirect to login page
+{#if not, redirect to login page#}
     {% else %}
         <p><a href="/login" target="_blank" rel="noopener noreferrer">login</a></p>
     {% endif %}
