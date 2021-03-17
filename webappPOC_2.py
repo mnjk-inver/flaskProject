@@ -61,6 +61,26 @@ def lab01():
     #run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_01_revised.py | python3")
+    #check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+        <html>
+            <body>
+                Python3 is not installed on your Linux VM. <br>
+                Review Lab 1 for installation instructions. 
+            </body>
+        </html>
+    '''
+    #check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+        <html>
+            <body>
+                Curl is not installed on your Linux VM. <br>
+                Review Lab 1 for installation instructions. 
+            </body>
+        </html>
+    '''
     #display command output
     return f'''
         <html>
@@ -83,6 +103,26 @@ def lab02():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_02_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -105,6 +145,26 @@ def lab03():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_03_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -127,6 +187,26 @@ def lab04():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_04_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -149,6 +229,26 @@ def lab05():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_05_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -171,6 +271,26 @@ def lab06():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_06_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -193,6 +313,26 @@ def lab07():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_07_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -215,6 +355,26 @@ def lab08():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_08_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -237,6 +397,26 @@ def lab09():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_09_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -263,6 +443,26 @@ def lab10():
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_10_rewrite.py | sudo python3")
     net_connect.exit_enable_mode()
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
 
     return f'''
@@ -286,6 +486,26 @@ def lab11():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_11_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
@@ -308,6 +528,26 @@ def lab12():
     # run command on remote host
     output = net_connect.send_command(
         "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/lab_12_test.py | python3")
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
     # display command output
     return f'''
             <html>
