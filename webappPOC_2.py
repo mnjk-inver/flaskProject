@@ -571,7 +571,7 @@ def skills():
     net_connect.enable()
     # run command on remote host
     output = net_connect.send_command(
-        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/FinalScript.py | sudo python3")
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/FinalScript_test.py | sudo python3")
     net_connect.exit_enable_mode()
     # check for missing python
     if "-bash:" and "python3:" in output:
