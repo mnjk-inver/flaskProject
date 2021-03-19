@@ -557,6 +557,52 @@ def lab12():
             </html>
         '''
 
+@app.route('/skills')
+def skills():
+    # check for existence of session
+    s = flask.session.get('login')
+    #    set login info from session as dictionary
+    VMR = {'device_type': "linux", 'ip': s['ip_address'], 'username': s['username'], 'password': s['password'],
+           'secret': s['password']}
+
+    # initiate connection
+    net_connect = ConnectHandler(**VMR)
+    #enable sudo on remote host
+    net_connect.enable()
+    # run command on remote host
+    output = net_connect.send_command(
+        "curl https://raw.githubusercontent.com/mnjk-inver/Linux-2480-Rebuild/main/FinalScript.py | sudo python3")
+    net_connect.exit_enable_mode()
+    # check for missing python
+    if "-bash:" and "python3:" in output:
+        return '''
+         <html>
+             <body>
+                 Python3 is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # check for missing curl
+    if "-bash:" and "curl:" in output:
+        return '''
+         <html>
+             <body>
+                 Curl is not installed on your Linux VM. <br>
+                 Review Lab 1 for installation instructions. 
+             </body>
+         </html>
+     '''
+    # display command output
+
+    return f'''
+            <html>
+                <body>
+                <p> <pre>{output}</pre> </p>
+                </body>
+            </html>
+        '''
+
 #check for netmiko authentication error
 @app.errorhandler(netmiko.ssh_exception.NetmikoAuthenticationException)
 def login_error(test):
