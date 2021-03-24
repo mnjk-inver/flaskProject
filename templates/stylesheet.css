@@ -1,0 +1,40 @@
+body {
+  color: #000000;
+  background-color: #ffffff;
+  font-family: sans-serif;
+}
+
+a {
+  color: #007ffc;	
+}
+
+.button {
+  background-color: #007ffc;
+  border: none;
+  color: white;
+  width: 100px;
+  padding: 15px 0px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+.buttonsba {
+  background-color: #007ffc;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 2px 2px;
+  cursor: pointer;
+}
