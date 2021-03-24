@@ -24,7 +24,7 @@ def samplefunction():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 #call form for inputting login info
-    form = LoginForm()
+    form = signin()
     if form.validate_on_submit():
         data = {'username': form.username.data, 'password': form.password.data, 'ip_address': form.ip_address.data}
         #store login info in a session cookie
