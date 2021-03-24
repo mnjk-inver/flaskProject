@@ -9,24 +9,28 @@
 {#if so print login info#}
         <p>You are currently logged in as {{ session['login']['username'] }}@{{session['login']['ip_address'] }} <br>
         <a href="/logout" target="_blank" rel="noopener noreferrer">logout</a></p>
+        {% if 'examuser' in session['login']['username']|lower %}
+            <p><a href="/skills" target="_blank" rel="noopener noreferrer" class="buttonsba">Skills Based Assessment</a></p>
+        {% else  %}
+                <p><a href="/lab01" target="_blank" rel="noopener noreferrer" class="button">lab01</a>
+                <a href="/lab02" target="_blank" rel="noopener noreferrer" class="button">lab02</a>
+                <a href="/lab03" target="_blank" rel="noopener noreferrer" class="button">lab03</a></p>
+                <p><a href="/lab04" target="_blank" rel="noopener noreferrer" class="button">lab04</a>
+                <a href="/lab05" target="_blank" rel="noopener noreferrer" class="button">lab05</a>
+                <a href="/lab06" target="_blank" rel="noopener noreferrer" class="button">lab06</a></p>
+                <p><a href="/lab07" target="_blank" rel="noopener noreferrer" class="button">lab07</a>
+                <a href="/lab08" target="_blank" rel="noopener noreferrer" class="button">lab08</a>
+                <a href="/lab09" target="_blank" rel="noopener noreferrer" class="button">lab09</a></p>
+                <p><a href="/lab10" target="_blank" rel="noopener noreferrer" class="button">lab10</a>
+                <a href="/lab11" target="_blank" rel="noopener noreferrer" class="button">lab11</a>
+                <a href="/lab12" target="_blank" rel="noopener noreferrer" class="button">lab12</a></p>
+        {% endif %}
 {#if not, redirect to login page#}
     {% else %}
         <p><a href="/login" target="_blank" rel="noopener noreferrer">login</a></p>
     {% endif %}
-    <p><a href="/lab01" target="_blank" rel="noopener noreferrer" class="button">lab01</a>
-    <a href="/lab02" target="_blank" rel="noopener noreferrer" class="button">lab02</a>
-    <a href="/lab03" target="_blank" rel="noopener noreferrer" class="button">lab03</a></p>
-    <p><a href="/lab04" target="_blank" rel="noopener noreferrer" class="button">lab04</a>
-    <a href="/lab05" target="_blank" rel="noopener noreferrer" class="button">lab05</a>
-    <a href="/lab06" target="_blank" rel="noopener noreferrer" class="button">lab06</a></p>
-    <p><a href="/lab07" target="_blank" rel="noopener noreferrer" class="button">lab07</a>
-    <a href="/lab08" target="_blank" rel="noopener noreferrer" class="button">lab08</a>
-    <a href="/lab09" target="_blank" rel="noopener noreferrer" class="button">lab09</a></p>
-    <p><a href="/lab10" target="_blank" rel="noopener noreferrer" class="button">lab10</a>
-    <a href="/lab11" target="_blank" rel="noopener noreferrer" class="button">lab11</a>
-    <a href="/lab12" target="_blank" rel="noopener noreferrer" class="button">lab12</a></p>
-    <br>
-    <p><a href="/skills" target="_blank" rel="noopener noreferrer" class="buttonsba">Skills Based Assessment</a></p>
+
+
 
 
 </body>
