@@ -1,5 +1,8 @@
 <!doctype html>
 <html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
 <body>
 {#check if login session cookie exists#}
     {% if session['login'] %}
@@ -10,20 +13,20 @@
     {% else %}
         <p><a href="/login" target="_blank" rel="noopener noreferrer">login</a></p>
     {% endif %}
-    <p><a href="/lab01" target="_blank" rel="noopener noreferrer">lab01</a></p>
-    <p><a href="/lab02" target="_blank" rel="noopener noreferrer">lab02</a></p>
-    <p><a href="/lab03" target="_blank" rel="noopener noreferrer">lab03</a></p>
-    <p><a href="/lab04" target="_blank" rel="noopener noreferrer">lab04</a></p>
-    <p><a href="/lab05" target="_blank" rel="noopener noreferrer">lab05</a></p>
-    <p><a href="/lab06" target="_blank" rel="noopener noreferrer">lab06</a></p>
-    <p><a href="/lab07" target="_blank" rel="noopener noreferrer">lab07</a></p>
-    <p><a href="/lab08" target="_blank" rel="noopener noreferrer">lab08</a></p>
-    <p><a href="/lab09" target="_blank" rel="noopener noreferrer">lab09</a></p>
-    <p><a href="/lab10" target="_blank" rel="noopener noreferrer">lab10</a></p>
-    <p><a href="/lab11" target="_blank" rel="noopener noreferrer">lab11</a></p>
-    <p><a href="/lab12" target="_blank" rel="noopener noreferrer">lab12</a></p>
+    <p><a href="/lab01" target="_blank" rel="noopener noreferrer" class="button">lab01</a>
+    <a href="/lab02" target="_blank" rel="noopener noreferrer" class="button">lab02</a>
+    <a href="/lab03" target="_blank" rel="noopener noreferrer" class="button">lab03</a></p>
+    <p><a href="/lab04" target="_blank" rel="noopener noreferrer" class="button">lab04</a>
+    <a href="/lab05" target="_blank" rel="noopener noreferrer" class="button">lab05</a>
+    <a href="/lab06" target="_blank" rel="noopener noreferrer" class="button">lab06</a></p>
+    <p><a href="/lab07" target="_blank" rel="noopener noreferrer" class="button">lab07</a>
+    <a href="/lab08" target="_blank" rel="noopener noreferrer" class="button">lab08</a>
+    <a href="/lab09" target="_blank" rel="noopener noreferrer" class="button">lab09</a></p>
+    <p><a href="/lab10" target="_blank" rel="noopener noreferrer" class="button">lab10</a>
+    <a href="/lab11" target="_blank" rel="noopener noreferrer" class="button">lab11</a>
+    <a href="/lab12" target="_blank" rel="noopener noreferrer" class="button">lab12</a></p>
     <br>
-    <p><a href="/skills" target="_blank" rel="noopener noreferrer">Skills Based Assessment</a></p>
+    <p><a href="/skills" target="_blank" rel="noopener noreferrer" class="buttonsba">Skills Based Assessment</a></p>
 
 
 </body>
