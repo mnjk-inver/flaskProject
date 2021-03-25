@@ -29,6 +29,10 @@
             {{ form.ip_address.label }}<br>
             {{ form.ip_address(size=32) }}
         </p>
+             <p>
+            {{ form.SBA_pass.label }}<br>
+            {{ form.SBA_pass(size=32) }}
+        </p>
         <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}

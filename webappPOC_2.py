@@ -26,7 +26,7 @@ def login():
 #call form for inputting login info
     form = signin()
     if form.validate_on_submit():
-        data = {'username': form.username.data, 'password': form.password.data, 'ip_address': form.ip_address.data}
+        data = {'username': form.username.data, 'password': form.password.data, 'ip_address': form.ip_address.data, 'SBA_pass': form.SBA_pass.data}
         #store login info in a session cookie
         flask.session['login'] = data
         #check if ip address is on 172.17.50.xx subnet

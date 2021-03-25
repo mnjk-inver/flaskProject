@@ -9,8 +9,8 @@
 {#if so print login info#}
         <p>You are currently logged in as {{ session['login']['username'] }}@{{session['login']['ip_address'] }} <br>
         <a href="/logout" target="_blank" rel="noopener noreferrer">logout</a></p>
-    {#check if username is examuser#}
-        {% if 'examuser' in session['login']['username']|lower %}
+    {#check if SBA_pass is correct#}
+        {% if 'supersecretpassword' in session['login']['SBA_pass'] %}
         {#if so display SBA#}
             <p><a href="/skills" target="_blank" rel="noopener noreferrer" class="buttonsba">Skills Based Assessment</a></p>
         {#if not show lab checks#}
