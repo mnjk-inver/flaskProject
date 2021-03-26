@@ -8,7 +8,7 @@
     {% if session['login'] %}
 {#if so print login info#}
         <p>You are currently logged in as {{ session['login']['username'] }}@{{session['login']['ip_address'] }} <br>
-        <a href="/logout" target="_blank" rel="noopener noreferrer">logout</a></p>
+        <a href="/logout" >logout</a></p>
     {#check if SBA_pass is correct#}
         {% if 'supersecretpassword' in session['login']['SBA_pass'] %}
         {#if so display SBA#}
